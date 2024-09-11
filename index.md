@@ -7,7 +7,7 @@ hero:
   tagline: "Easily embed a publications widget powered by Zotero on your website."
 
   image: 
-    src: "/logo.webp"
+    src: "/logo.svg"
     alt: "Publications Widget Logo"
 
 markdownStyles: false
