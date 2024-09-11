@@ -41,9 +41,7 @@ Follow these simple steps to find it:
 1. Visit [Zotero Groups](https://www.zotero.org/groups).
 2. Select or create your group. This group needs to be public.
 3. Look at the URL of your group page. The Group ID will be the number at the end of the URL:
-   ```
-   https://www.zotero.org/groups/1234567/groupname
-   ```
+   `https://www.zotero.org/groups/1234567/groupname`.
    In this case, the Group ID is `1234567`.
 4. Start adding publications to your group library.
 
