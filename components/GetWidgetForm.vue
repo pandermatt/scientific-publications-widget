@@ -2,6 +2,8 @@
 import { ref } from 'vue';
 
 const zoteroId = ref('');
+
+const currentHost = window.location.origin;
 </script>
 
 <template>
@@ -11,11 +13,12 @@ const zoteroId = ref('');
         <div v-if="zoteroId">
             <strong>Your Widget URL</strong>
 
-            <div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span
-                    class="lang"></span>
+            <div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span>
                 <pre class="shiki shiki-themes github-light github-dark vp-code"
-                    tabindex="0"><code><span class="line"><span>{{ `https://pub-get.ch/iframe?zoteroId=${zoteroId}` }}</span></span></code></pre>
+                    tabindex="0"><code><span class="line"><span>{{ `${currentHost}/iframe?zoteroId=${zoteroId}` }}</span></span></code></pre>
             </div>
+
+            <a :href="`${currentHost}/iframe?zoteroId=${zoteroId}`" target="_blank">Preview Your Widget</a>
         </div>
     </div>
 </template>
