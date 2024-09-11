@@ -8,8 +8,8 @@ export default defineConfig({
   srcExclude: ['README.md'],
   cleanUrls: true,
   themeConfig: {
-    // socialLinks: [
-    //   { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    // ]
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/pandermatt/scientific-publications-widget' }
+    ]
   }
 })
