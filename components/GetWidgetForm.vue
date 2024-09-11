@@ -13,10 +13,12 @@ const currentHost = window.location.origin;
         <div v-if="zoteroId">
             <strong>Your Widget URL</strong>
 
-            <div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span>
+            <div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span
+                    class="lang"></span>
                 <pre class="shiki shiki-themes github-light github-dark vp-code"
                     tabindex="0"><code><span class="line"><span>{{ `${currentHost}/iframe?zoteroId=${zoteroId}` }}</span></span></code></pre>
             </div>
+
 
             <a :href="`${currentHost}/iframe?zoteroId=${zoteroId}`" target="_blank">Preview Your Widget</a>
         </div>
@@ -35,19 +37,5 @@ input {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-button {
-    padding: 10px;
-    font-size: 16px;
-    background-color: #42b983;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #389d73;
 }
 </style>

@@ -23,7 +23,7 @@ features:
 
 
 <div class="home-content">
-  
+
 ## Get Your Widget
 
 Enter your Zotero ID below to generate the widget code for your website.
