@@ -10,6 +10,8 @@ hero:
     src: "/logo.webp"
     alt: "Publications Widget Logo"
 
+markdownStyles: false
+
 features:
   - title: ⚡ Easy Setup
     details: With just a Zotero ID, you can integrate your publications into any website with minimal effort.
@@ -22,7 +24,7 @@ features:
 ---
 
 
-<div class="home-content">
+<div class="home-content vp-doc">
 
 ## Get Your Widget
 
