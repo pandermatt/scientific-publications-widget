@@ -9,8 +9,6 @@ hero:
   image: 
     src: "/logo.webp"
     alt: "Publications Widget Logo"
-    style:
-      border-radius: 50%
 
 features:
   - title: ⚡ Easy Setup
