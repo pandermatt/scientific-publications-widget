@@ -30,7 +30,7 @@
                         </summary>
                         <p v-if="publication.data.proceedingsTitle || publication.data.repository">
                             <strong>Published in:</strong> {{ publication.data.proceedingsTitle ||
-                            publication.data.repository }}
+                                publication.data.repository }}
                         </p>
                         <p v-if="publication.data.publisher">
                             <strong>Publisher:</strong> {{ publication.data.publisher }}
@@ -105,6 +105,20 @@ onMounted(fetchPublications);
 </script>
 
 <style scoped lang="scss">
+@keyframes pulse {
+    0% {
+        background-color: #fafafa;
+    }
+
+    50% {
+        background-color: #f5f5f5;
+    }
+
+    100% {
+        background-color: #fafafa;
+    }
+}
+
 .publications {
     .year-title {
         font-weight: bold;
@@ -134,53 +148,20 @@ onMounted(fetchPublications);
     }
 
     .publication {
+        padding: 16px;
+        border-color: var(--vp-custom-block-details-border);
+        color: var(--vp-custom-block-details-text);
+        background-color: var(--vp-custom-block-details-bg);
+
         summary {
             cursor: pointer;
             margin: 0;
         }
-
-        padding: 16px;
-
-        border-color: var(--vp-custom-block-details-border);
-        color: var(--vp-custom-block-details-text);
-        background-color: var(--vp-custom-block-details-bg);
     }
 }
 
 .loading-skeleton {
-    @keyframes pulse {
-        0% {
-            background-color: #fafafa;
-        }
-
-        50% {
-            background-color: #f5f5f5;
-        }
-
-        100% {
-            background-color: #fafafa;
-        }
-    }
-
-    @keyframes pulseDark {
-        0% {
-            background-color: #333;
-        }
-
-        50% {
-            background-color: #444;
-        }
-
-        100% {
-            background-color: #333;
-        }
-    }
-
     animation: pulse 1.5s infinite;
-
-    .dark & {
-        animation: pulseDark 1.5s infinite;
-    }
 
     height: 100px;
     display: flex;
