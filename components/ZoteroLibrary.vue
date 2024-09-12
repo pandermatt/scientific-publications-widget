@@ -99,6 +99,7 @@ const fetchPublications = async () => {
 };
 
 const getAuthors = (creators) => {
+    if (!creators) return [];
     return creators.filter((creator) => creator.creatorType === 'author');
 };
 
@@ -107,13 +108,16 @@ const groupedPublications = computed(() => {
     publications.value.forEach((publication) => {
         const date = new Date(publication.data.date);
         const year = date.getFullYear();
+        if (!year) return;
+
+        publication.data.myAuthors = getAuthors(publication.data.creators);
+        publication.data.myDate = date;
+        if (publication.data.myAuthors.length === 0) return;
 
         if (!groups[year]) {
             groups[year] = [];
         }
 
-        publication.data.myAuthors = getAuthors(publication.data.creators);
-        publication.data.myDate = date;
         groups[year].push(publication);
     });
 

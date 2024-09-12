@@ -6,6 +6,7 @@ Go to [Publications Widget](https://pub-get.ch/) to get your widget code.
 
 ## To Dos
 
+- [ ] highlight your name in the list of authors
 - [ ] pagination 
 - [ ] search
 - [ ] pass hight via parameter 
