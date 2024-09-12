@@ -4,8 +4,13 @@ The **Publications Widget** is a simple and privacy-focused tool to display your
 
 Go to [Publications Widget](https://pub-get.ch/) to get your widget code.
 
-## Todod
+## To Dos
 
 - [ ] pagination 
 - [ ] search
 - [ ] pass hight via parameter 
+
+## Resources
+
+- [Vitepress documentation](https://vitepress.dev/)
+- [CSS-Only Scroll Shadows](https://codepen.io/chriscoyier/pen/YzXBYvL)
