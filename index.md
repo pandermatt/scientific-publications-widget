@@ -69,6 +69,7 @@ We are actively working on new features for the widget, and you are welcome to c
 - 📄 Pagination for publications
 - 🔎 Search functionality
 - 🖼️ Ability to pass iframe height via URL parameters
+- ✨ Highlight your name in **bold** (currently, only 'Pascal Andermatt' is hardcoded as highlighted)
 
 ---
 
