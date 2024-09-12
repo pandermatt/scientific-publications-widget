@@ -69,7 +69,7 @@ const fetchPublications = async () => {
             headers['If-Modified-Since'] = lastFetchedDate.value.toUTCString();
         }
 
-        const response = await axios.get(`https://api.zotero.org/groups/${zoteroId}/items?limit=50`, {
+        const response = await axios.get(`https://api.zotero.org/groups/${zoteroId}/items?sort=date`, {
             headers
         });
 
