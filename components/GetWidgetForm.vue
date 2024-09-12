@@ -19,8 +19,11 @@ const currentHost = window.location.origin;
                     tabindex="0"><code><span class="line"><span>{{ `${currentHost}/iframe?zoteroId=${zoteroId}` }}</span></span></code></pre>
             </div>
 
-
-            <a :href="`${currentHost}/iframe?zoteroId=${zoteroId}`" target="_blank">Preview Your Widget</a>
+            <p>
+                The iframe height is set to <b>500px</b>. In the future, we will add the ability to customize the height.
+                <br>
+                <a :href="`${currentHost}/iframe?zoteroId=${zoteroId}`" target="_blank">Preview Your Widget</a>
+            </p>
         </div>
     </div>
 </template>
