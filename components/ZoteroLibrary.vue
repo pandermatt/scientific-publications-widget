@@ -7,10 +7,10 @@
                     Loading Publications...
                 </div>
             </div>
-            <div class="danger custom-block" v-if="error">
-                <p class="custom-block-title">Error</p>
-                <p>{{ error }}</p>
-            </div>
+        </div>
+        <div class="danger custom-block" v-if="error">
+            <p class="custom-block-title">Error</p>
+            <p>{{ error }}</p>
         </div>
 
         <div v-else>
@@ -56,17 +56,45 @@ import axios from 'axios';
 const isLoading = ref(true);
 const publications = ref([]);
 const error = ref(null);
-
+const hasMoreData = ref(true);
+const lastFetchedDate = ref(null);
 const zoteroId = window.location.search.split('zoteroId=')[1];
 
 const fetchPublications = async () => {
+    if (!hasMoreData.value) return;
+
     try {
-        const response = await axios.get(`https://api.zotero.org/groups/${zoteroId}/items`);
-        publications.value = response.data;
+        const headers = {};
+        if (lastFetchedDate.value) {
+            headers['If-Modified-Since'] = lastFetchedDate.value.toUTCString();
+        }
+
+        const response = await axios.get(`https://api.zotero.org/groups/${zoteroId}/items?limit=50`, {
+            headers
+        });
+
+        if (response.data.length === 0) {
+            hasMoreData.value = false;
+        } else {
+            publications.value = [...publications.value, ...response.data];
+            lastFetchedDate.value = new Date();
+        }
+
         isLoading.value = false;
-    } catch (error) {
-        console.error('Error fetching publications:', error);
-        error.value = 'Error fetching publications. Please try again later.';
+    } catch (err) {
+        console.error('Error fetching publications:', err);
+
+        if (err.response && err.response.status === 429) {
+            error.value = 'Rate limit exceeded. Please try again later.';
+        } else {
+            error.value = 'Error fetching publications. Please try again later.';
+        }
+
+        isLoading.value = false;
+    } finally {
+        if (publications.value.length === 0) {
+            error.value = 'No publications found. Make sure your group is public and has publications.';
+        }
     }
 };
 
@@ -83,7 +111,7 @@ const groupedPublications = computed(() => {
         if (!groups[year]) {
             groups[year] = [];
         }
-        console.log(publication.data);
+
         publication.data.myAuthors = getAuthors(publication.data.creators);
         publication.data.myDate = date;
         groups[year].push(publication);
@@ -122,7 +150,7 @@ onMounted(fetchPublications);
 .publications {
     .year-title {
         font-weight: bold;
-        margin-bottom: -10px
+        margin-bottom: -10px;
     }
 
     .title {
@@ -171,5 +199,25 @@ onMounted(fetchPublications);
     .loading-skeleton-title {
         font-weight: bold;
     }
+}
+
+.load-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #42b983;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #389d73;
 }
 </style>
