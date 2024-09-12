@@ -26,23 +26,22 @@ features:
 
 <div class="home-content vp-doc">
 
-
 ## Publications Widget <Badge text="Beta" type="warning" />
 
-Easily embed your Zotero publications on your website with our simple widget! Perfect for academic websites, portfolios, or research group pages.
+📚 Easily embed your [Zotero](https://www.zotero.org/) publications on your website with our simple widget! Perfect for academic websites, portfolios, or research group pages.
 
 ::: warning
 The **Publications Widget** is currently in beta. **Do not use it in production environments**.
+Check out the [Why is the Widget in Beta?](#🧪-why-is-the-widget-in-beta) section for more information and self-hosting suggestions.
 :::
 
-## Get Your Widget
+## 🛠️ Get Your Widget
 
 Enter your Zotero ID below to generate the widget code for your website.
 
 <GetWidgetForm />
 
-
-## How to Get Your Zotero ID
+## 🔍 How to Get Your Zotero ID
 
 To display your publications using the **Publications Widget**, you'll need to provide your Zotero ID. Follow these simple steps to find it:
 
@@ -52,31 +51,28 @@ To display your publications using the **Publications Widget**, you'll need to p
    `https://www.zotero.org/groups/1234567/groupname`. In this case, the Group ID is `1234567`.
 4. Start adding publications to your group library.
 
-
-## Why is the Widget in Beta?
+## 🧪 Why is the Widget in Beta?
 
 The **Publications Widget** is currently in beta, which means it is still under active development and might have some bugs. We are continuously improving it, but in the meantime, there could be some limitations, including:
 
-- Unknown performance under heavy traffic.
-- Potential limitations on the number of requests, or even temporary shutdowns, in worst-case scenarios.
+- ❓ Unknown performance under heavy traffic.
+- 🚫 Potential limitations on the number of requests, or even temporary shutdowns, in worst-case scenarios.
 
 If you're looking for a more stable solution, you can self-host the widget. The source code is available on [GitHub](https://github.com/pandermatt/scientific-publications-widget). If you enjoy using the widget, please consider starring the repository.
 
 Since it's built with VitePress, you can follow the [VitePress documentation on deployment](https://vitepress.dev/guide/deploy.html#platform-guides).
 
-
-## Upcoming Features
+## 🚀 Upcoming Features
 
 We are actively working on new features for the widget, and you are welcome to contribute to the project on [GitHub](https://github.com/pandermatt/scientific-publications-widget).
 
-- Pagination for publications
-- Search functionality
-- Ability to pass iframe height via URL parameters
+- 📄 Pagination for publications
+- 🔎 Search functionality
+- 🖼️ Ability to pass iframe height via URL parameters
 
 ---
 
-Feel free to report any issues or suggestions on GitHub. We appreciate your feedback!
-
+Feel free to report any issues or suggestions on GitHub. We appreciate your feedback! 📝
 
 </div>
 
